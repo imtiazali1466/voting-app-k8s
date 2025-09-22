@@ -1,6 +1,4 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: voting-app
-  labels:
-    name: voting-app 
+  name: nginx 
