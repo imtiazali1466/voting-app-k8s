@@ -56,7 +56,7 @@ sudo nohup systemctl status docker > docker_status.log 2>&1 &
 sleep 3
 cat docker_status.log   
 
-# Activate the changes to groups
-newgrp docker
-# run hello-world image 
+# run hello-world image in the background
 sudo su -l $USER -c "docker run hello-world"
+sleep 2
+docker ps -a
