@@ -52,9 +52,11 @@ echo "Starting Docker and running hello-world image..."
 echo "####################################################"
 # Start Docker and check status
 sudo systemctl start docker
-sudo systemctl status docker
+sudo nohup systemctl status docker > docker_status.log 2>&1 &
+sleep 3
+cat docker_status.log   
 
+# Activate the changes to groups
 newgrp docker
-
 # run hello-world image 
 sudo docker run hello-world
