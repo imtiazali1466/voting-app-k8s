@@ -59,4 +59,4 @@ cat docker_status.log
 # Activate the changes to groups
 newgrp docker
 # run hello-world image 
-sudo docker run hello-world
+sudo su -l $USER -c "docker run hello-world"
