@@ -58,6 +58,13 @@ cat docker_status.log
 
 # run hello-world image in the background
 sudo su -l $USER -c "docker run hello-world"
-sleep 2
-docker ps -a
-docker system prune -f # clean up 
+sleep 3
+
+# check docker processes
+echo "####################################################"
+echo "Checking Docker processes..."
+echo "####################################################"
+sudo docker ps -a
+sudo docker system prune -f # clean up
+
+newgrp docker # refresh group membership
