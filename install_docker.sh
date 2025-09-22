@@ -60,4 +60,4 @@ cat docker_status.log
 sudo su -l $USER -c "docker run hello-world"
 sleep 2
 docker ps -a
-docker system prune -f -y # clean up 
+docker system prune -f # clean up 
