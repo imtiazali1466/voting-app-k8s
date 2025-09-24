@@ -22,7 +22,7 @@ spec:
           ports:
             - containerPort: 80
           volumeMounts:
-            - name: nginx-storage
+            - name: local-storage
               mountPath: /var/www/html
           resources:
             requests:
