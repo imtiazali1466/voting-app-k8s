@@ -25,13 +25,12 @@ spec:
             - echo "Backup data" > /data/backup/backup.txt
             - echo "Backup completed"
             volumeMounts:
-            - name: backup-volume
-              mountPath: /data/backup
+            - name: local-storage
+              mountPath: /data
           restartPolicy: OnFailure
           volumes:
-          - name: backup-volume
-            hostPath:
-              path: /data/backup
-              type: DirectoryOrCreate
+          - name: local-storage
+            persistentVolumeClaim:
+              claimName: local-pvc
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 1 
