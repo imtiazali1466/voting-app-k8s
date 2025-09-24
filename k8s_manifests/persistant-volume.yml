@@ -4,7 +4,6 @@ metadata:
   name: local-pv
   labels:
     type: local
-  namespace: nginx
 spec:
   capacity:
     storage: 1Gi
