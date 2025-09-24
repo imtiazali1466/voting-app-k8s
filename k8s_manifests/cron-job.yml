@@ -6,6 +6,7 @@ spec:
   schedule: "* * * * *"
   jobTemplate:
     spec:
+      backoffLimit: 2
       template:
         metadata:
           name: hello
@@ -31,6 +32,5 @@ spec:
             hostPath:
             path: /data/backup
             type: DirectoryOrCreate
-      backoffLimit: 2
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 1 
