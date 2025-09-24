@@ -29,7 +29,8 @@ spec:
           volumes:
           - name: backup-volume
             hostPath:
-            path: /tmp/backup
+            path: /data/backup
             type: DirectoryOrCreate
+      backoffLimit: 2
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 1 
