@@ -13,5 +13,5 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   hostPath:
-    - path: /mnt/data
-      type: DirectoryOrCreate
+    path: /mnt/data
+    type: DirectoryOrCreate
