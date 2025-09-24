@@ -30,7 +30,7 @@ spec:
           volumes:
           - name: backup-volume
             hostPath:
-            path: /data/backup
-            type: DirectoryOrCreate
+              path: /data/backup
+              type: DirectoryOrCreate
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 1 
