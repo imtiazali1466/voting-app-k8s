@@ -1,0 +1,35 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: myjob
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          name: hello
+          labels:
+            app: hello
+        spec:
+          containers:
+          - name: hello
+            image: busybox
+            command:
+            - /bin/sh
+            - -c
+            - echo "Backup started" && sleep 30 && echo "Backup finished"
+            - mkdir -p /data/backup
+            - echo "Backup data" > /data/backup/backup.txt
+            - echo "Backup completed"
+            volumeMounts:
+            - name: backup-volume
+              mountPath: /data/backup
+          restartPolicy: OnFailure
+          volumes:
+          - name: backup-volume
+            hostPath:
+            path: /tmp/backup
+            type: DirectoryOrCreate
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1 
