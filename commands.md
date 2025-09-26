@@ -71,4 +71,5 @@ curl 27.0.0.0
 
 ```bash
 kubectl describe pod/nginx-pod -n nginx
+kubectl delete pod/nginx-pod -n nginx
 ```
