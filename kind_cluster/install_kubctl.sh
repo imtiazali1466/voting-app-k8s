@@ -7,7 +7,7 @@
 
 # add execute permission and mv to /usr/local/bin
 chmod +x ./kubectl
-sudo mv ./kubectl /user/local/bin/kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
 
 # install kubectl and check version
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
